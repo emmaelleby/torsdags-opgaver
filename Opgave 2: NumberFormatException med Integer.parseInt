@@ -1,0 +1,60 @@
+import java.time.Year;
+import java.util.Scanner;
+
+public class TalFraBruger {
+    
+    // birthYearInDigits = Brugeren skal indtaste sit fødselsår i tal
+    // currentYear = Det nuværende årstal (2025)
+    // usersBirthYear = Dette er brugerens fødselsår
+    // userAge = Dette er brugerens alder
+
+
+    
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+
+        boolean birthYearInDigits = false;
+        int currentYear = 2025;
+
+
+
+        while (!birthYearInDigits) {
+            System.out.println("Indtast dit fødselsår:");
+            String input = scanner.nextLine();
+
+
+            try {
+                int usersBirthYear = Integer.parseInt(input);
+                // Sørger for at brugeren skriver et 4 cifret tal:
+                if (input.length() != 4 ) {
+                    System.out.println("Du skal indtaste præcis 4 tal. Prøv igen.");
+                    continue;
+
+                }
+
+
+                int userAge = currentYear - usersBirthYear;
+                System.out.println("Du er " + userAge + " år gammel.");
+                birthYearInDigits = true;
+
+
+
+
+
+
+            } catch (NumberFormatException e) {
+                System.out.println("Hov. Du kan kun bruge tal. Prøv igen.");
+            }
+            }
+        }
+
+
+
+
+        // Brug Integer.parseInt til at konvertere input til int
+        // Beregn brugerens alder (antag at nuværende år er 2025)
+        // Print alderen
+    }
